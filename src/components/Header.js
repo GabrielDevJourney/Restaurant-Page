@@ -1,3 +1,4 @@
+import cartIconUrl from '../assets/cartIcon.png'
 export function createHeader(){
     const headerContainer = document.createElement('div')
     headerContainer.className = 'headerContainer'
@@ -5,7 +6,7 @@ export function createHeader(){
     //Logo text container
     const logoTextContainer = document.createElement('div')
     logoTextContainer.className = 'logoTextContainer'
-    const logoText = document.createElement('h2')
+    const logoText = document.createElement('p')
     logoText.className = 'logoText'
     logoText.textContent = 'KAIZEN HOUSE'
     logoTextContainer.appendChild(logoText)
@@ -39,7 +40,7 @@ export function createHeader(){
     iconContainer.className = 'iconContainer'
     const cartIcon = document.createElement('img')
     cartIcon.className = 'cartIcon'
-    cartIcon.src = "./src/assets/cartIcon.png"
+    cartIcon.src = cartIconUrl
     cartIcon.alt = "Cart"
     const cartItemCount = document.createElement('span')
     cartItemCount.className = 'cartCounter'
@@ -50,3 +51,4 @@ export function createHeader(){
 
     return headerContainer
 }
+
