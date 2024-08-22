@@ -1,14 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 	mode: "development",
 	entry: "./src/index.js",
 	output: {
-		filename: "main.js",
+		filename: "bundle.js",
 		path: path.resolve(__dirname, "dist"),
-        clean : true,
+		clean: true,
 	},
 	module: {
 		rules: [
@@ -29,7 +29,6 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "./src/template.html",
-			favicon: "./src/favicon.icon",
 		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].[contenthash].css",
@@ -40,9 +39,12 @@ module.exports = {
 			directory: path.join(__dirname, "dist"),
 		},
 		compress: true,
-		port: "auto",
+		port: 8081,
 		open: true,
-        hot : true,
+		hot: true,
 	},
-    devtool : "inline-source-map",
+	resolve: {
+		extensions: [".js", ".jsx", ".json", ".png"],
+	},
+	devtool: "inline-source-map",
 };
