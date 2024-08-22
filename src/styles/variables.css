@@ -1,0 +1,10 @@
+:root {
+	--color-primary: #333f72; /* text-color and border-color */
+	--color-accent: #e56e0c; /* dishes-names-and-price-color and btns color */
+	--color-background: #f3ede1; /* background color */
+	--color-decor: rgba(198, 162, 114, 0.15); /* japonese-letters-decor-color */
+
+	/* Typography */
+	--font-main: "MainFont", Arial, sans-serif; 
+	--font-secondary: "SecondaryFont", Helvetica, sans-serif;
+}
