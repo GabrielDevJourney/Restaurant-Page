@@ -1,13 +1,20 @@
 import './styles/main.css'
-import { createHeader } from "./components/Header.js";
+import { Header } from "./components/Header.js";
 import { renderHomePage } from "./pages/Home.js";
 import { renderFooter } from "./components/Footer.js";
+import { initRouter } from './router.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 	const body = document.body;
 
-	const header = createHeader();
-	body.appendChild(header);
+	const header = new Header();
+	body.appendChild(header.getElement());
+
+    const content = document.createElement('div')
+    content.id = 'content'
+    document.body.appendChild(content)
+
+    initRouter(header)
 
 	// const main = document.createElement("main");
 	// main.appendChild(renderHomePage());
