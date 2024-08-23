@@ -54,3 +54,6 @@
 	align-items: center;
 	justify-content: center;
 }
+.navContainer a.activeLink{
+    color: var(--color-accent) !important;
+}
