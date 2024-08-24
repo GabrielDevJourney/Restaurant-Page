@@ -17,6 +17,11 @@ export function initRouter(header) {
 		updatePageContent(normalizedPage);
 	};
 
+    //Handle navigation of heroCtaBtn
+    window.addEventListener('navigate', (event) => {
+        navigateTo(event.detail.page)
+    })
+
 	// Handle initial page load and browser back/forward
 	window.addEventListener("hashchange", () => {
 		const page = window.location.hash.slice(1) || "home";
@@ -28,6 +33,7 @@ export function initRouter(header) {
 	// Handle the initial page load
 	navigateTo(inicialPage);
 }
+
 function updatePageContent(page) {
 	const contentDiv = document.getElementById("content");
 	contentDiv.innerHTML = ""; // Clear current content
