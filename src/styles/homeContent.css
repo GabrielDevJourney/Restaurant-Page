@@ -1,0 +1,41 @@
+.heroSection{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*                  HERO SECTION             */
+.heroTextContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:var(--font-main) ;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+.heroTextLine1{
+    padding-bottom: 1rem;
+}
+.heroTextLine1,
+.heroTextLine2{
+    font-size: 5rem;
+}
+
+.heroCtaBtn{
+    width: 12.5rem;
+    height: 3.75rem;
+    background-color: var(--color-accent);
+    color: white;
+    border-radius: 1.5rem 0 1.5rem 0;
+    border: none;
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    cursor: pointer;
+}
+
+.heroImage{
+    height: 460px;
+    padding-right: 3rem;
+}
