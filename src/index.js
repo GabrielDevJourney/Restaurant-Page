@@ -1,7 +1,5 @@
 import './styles/main.css'
 import { Header } from "./components/Header.js";
-import { renderHomePage } from "./pages/Home.js";
-import { renderFooter } from "./components/Footer.js";
 import { initRouter } from './router.js';
 
 document.addEventListener("DOMContentLoaded", () => {
