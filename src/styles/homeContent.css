@@ -39,3 +39,80 @@
     height: 460px;
     padding-right: 3rem;
 }
+
+/*                      MenuPreviewSection                  */
+
+.menuPreviewContainer,
+.menuCardsContainer,
+.menuCard{
+    display: flex;
+}
+.menuPreviewContainer,
+.menuCard{
+    flex-direction: column;
+}
+
+.menuPreviewContainer{
+    align-items: center;
+    margin: 4rem 0 2rem 0;
+    padding: 1rem;
+}
+
+.menuPreviewHeaderContainer{
+    margin-bottom: 2rem;
+}
+.headerText{
+    font-size: 3rem;
+    font-family: var(--font-main);
+    color: var(--color-primary);
+}
+
+.menuCardsContainer{
+    gap: 2rem;
+}
+.menuCard{
+    justify-content: space-around;
+    box-sizing: border-box !important;
+    width: 300px;
+    height: 370px;
+    border-radius: 48px 0 48px 0;
+    border:  2px var(--color-primary)
+    solid;
+    padding: 1rem;
+}
+.cardImg{
+    width: 250px;
+    height: 190px;
+}
+.ctgAndVart{
+    display: flex;
+    justify-content: space-between;
+}
+.categoryText{
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    font-size: 2rem;
+}
+.varietiesText{
+    font-family: var(--font-secondary);
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+.btnContainer{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnOrderNow{
+    width: 240px;
+    height: 60px;
+    text-align: center;
+    border-radius: 24px 0 24px 0;
+    border: 2px var(--color-accent) solid;
+    color: var(--color-accent);
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
