@@ -1,15 +1,19 @@
 import landingPageImage from '../assets/imageLandingPage.svg'
+import sushiImage from '../assets/sushiMenu.svg'
+import ramenImage from '../assets/ramenMenu.svg'
+import mochiImage from '../assets/mochiMenu.svg'
+import onigiriImage from '../assets/onigiriMenu.svg'
 
 export function renderHomePage(){
     const contentHomeWrapper = document.createElement('div')
     contentHomeWrapper.className = 'contentHomeWrapper'
 
     const heroSection = createHeroSection()
-    // const menuPreviewSection = createMenuPreview()
+    const menuPreviewSection = createMenuPreviewSection()
     // const testimonialsSection = createTestimonialsSection()
 
     contentHomeWrapper.appendChild(heroSection)
-    // contentHomeWrapper.appendChild(menuPreviewSection)
+    contentHomeWrapper.appendChild(menuPreviewSection)
     // contentHomeWrapper.appendChild(testimonialsSection)
 
     // addDecorativeElements(contentHomeWrapper)
@@ -57,4 +61,75 @@ function createHeroSection(){
     heroSection.appendChild(heroImage)
 
     return heroSection
+}
+
+function createMenuPreviewSection(){
+    const menuPreviewSection = document.createElement('div')
+    menuPreviewSection.className = 'menuPreviewContainer'
+
+    const menuPreviewHeaderContainer = document.createElement('div')
+    menuPreviewHeaderContainer.className = 'menuPreviewHeaderContainer'
+    menuPreviewSection.appendChild(menuPreviewHeaderContainer)
+
+    const headerText = document.createElement('p')
+    headerText.className = 'headerText'
+    headerText.textContent = 'MENU'
+    menuPreviewHeaderContainer.appendChild(headerText)
+
+    const menuCardsContainer = document.createElement('div')
+    menuCardsContainer.className = 'menuCardsContainer'
+    menuPreviewSection.appendChild(menuCardsContainer)
+
+    const cards = [
+        {name : 'SUSHI', varieties: '3 varieties', image: sushiImage},
+        {name : 'RAMEN', varieties: '2 varieties', image: ramenImage},
+        {name : 'MOCHI', varieties: '2 varieties', image: mochiImage},
+        {name : 'ONIGIRI', varieties: '2 varieties', image: onigiriImage}
+    ]
+    cards.forEach((cardInfo) => {
+        const card = document.createElement('div')
+        card.className = 'menuCard'
+        menuCardsContainer.appendChild(card)
+
+        const cardImg = document.createElement('img')
+        cardImg.className = 'cardImg'
+        cardImg.src = cardInfo.image
+        cardImg.alt = cardInfo.name
+        card.appendChild(cardImg)
+
+        const ctgAndVart = document.createElement('div')
+        ctgAndVart.className = 'ctgAndVart'
+        card.appendChild(ctgAndVart)
+        
+        const categoryText = document.createElement('p')
+        categoryText.className = 'categoryText'
+        categoryText.textContent = cardInfo.name
+        ctgAndVart.appendChild(categoryText)
+
+        const varietiesText = document.createElement('p')
+        varietiesText.className = 'varietiesText'
+        varietiesText.textContent = cardInfo.varieties
+        ctgAndVart.appendChild(varietiesText)
+
+        const btnContainer = document.createElement('div')
+        btnContainer.className = 'btnContainer'
+        card.appendChild(btnContainer)
+
+        const btnOrderNow = document.createElement('button')
+        btnOrderNow.className = 'btnOrderNow'
+        btnOrderNow.textContent = 'ORDER NOW'
+        btnOrderNow.addEventListener('click', (e) => {
+            e.preventDefault()
+            const navigateEvent = new CustomEvent('navigate', {
+                detail : {
+                    page : 'menu',
+                    category: cardInfo.name.toLocaleLowerCase() //scroll direct to section of menu
+                }
+            })
+            window.dispatchEvent(navigateEvent)
+        })
+        btnContainer.appendChild(btnOrderNow)
+    })
+
+    return menuPreviewSection
 }
