@@ -34,12 +34,22 @@ export function initRouter(header) {
 	navigateTo(inicialPage);
 }
 
-function updatePageContent(page) {
+function updatePageContent(page, category = null) {
 	const contentDiv = document.getElementById("content");
 	contentDiv.innerHTML = ""; // Clear current content
 
 	if (routes[page]) {
-		contentDiv.appendChild(routes[page]());
+        contentDiv.appendChild(routes[page]());
+
+        if(page === 'menu' && category){
+            setTimeout(() => {
+                const categoryElement = document.getElementById(category)
+                if(categoryElement){
+                    categoryElement.scrollIntoView({behavior : 'smooth'})
+                }
+            }, 100)// delay to ensure render
+        }
+
 	} else {
 		contentDiv.textContent = "404 - Page not found";
 	}
