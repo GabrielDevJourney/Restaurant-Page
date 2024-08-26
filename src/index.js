@@ -1,5 +1,6 @@
 import './styles/main.css'
 import { Header } from "./components/Header.js";
+import {renderFooter} from './components/Footer.js'
 import { initRouter } from './router.js';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,6 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	// main.appendChild(renderHomePage());
 	// body.appendChild(main);
 
-	// const footer = renderFooter();
-	// body.appendChild(footer);
+	const footer = renderFooter();
+	body.appendChild(footer);
 });
