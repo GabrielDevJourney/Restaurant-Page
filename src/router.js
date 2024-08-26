@@ -9,29 +9,31 @@ const routes = {
 };
 
 export function initRouter(header) {
-	window.navigateTo = (page) => {
+	window.navigateTo = (page, category = null) => {
 		console.log("Navigating to:", page); // Add this debug log
 		const normalizedPage = page.toLowerCase();
 		window.location.hash = normalizedPage;
 		header.updateActiveLink(normalizedPage);
-		updatePageContent(normalizedPage);
+		updatePageContent(normalizedPage, category);
 	};
 
     //Handle navigation of heroCtaBtn
     window.addEventListener('navigate', (event) => {
-        navigateTo(event.detail.page)
+        navigateTo(event.detail.page, event.detail.category)
     })
 
 	// Handle initial page load and browser back/forward
 	window.addEventListener("hashchange", () => {
-		const page = window.location.hash.slice(1) || "home";
-		navigateTo(page);
+		const hash = window.location.hash.slice(1) || "home";
+        const[page,category] = hash.split('/')
+		navigateTo(page || 'home', category);
 	});
 
-	const inicialPage = window.location.hash.slice(1) || "home";
+    const initialHash = window.location.hash.slice(1);
+	const [inicialPage, initialCategory] = initialHash.split("/");
 
 	// Handle the initial page load
-	navigateTo(inicialPage);
+	navigateTo(inicialPage || "home", initialCategory);
 }
 
 function updatePageContent(page, category = null) {
