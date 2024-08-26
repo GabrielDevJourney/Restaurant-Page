@@ -3,6 +3,9 @@ import sushiImage from '../assets/sushiMenu.svg'
 import ramenImage from '../assets/ramenMenu.svg'
 import mochiImage from '../assets/mochiMenu.svg'
 import onigiriImage from '../assets/onigiriMenu.svg'
+import review1 from '../assets/review1.png'
+import review2 from '../assets/review2.png'
+import review3 from '../assets/review3.png'
 
 export function renderHomePage(){
     const contentHomeWrapper = document.createElement('div')
@@ -10,11 +13,11 @@ export function renderHomePage(){
 
     const heroSection = createHeroSection()
     const menuPreviewSection = createMenuPreviewSection()
-    // const testimonialsSection = createTestimonialsSection()
+    const testimonialsSection = createTestimonialsSection()
 
     contentHomeWrapper.appendChild(heroSection)
     contentHomeWrapper.appendChild(menuPreviewSection)
-    // contentHomeWrapper.appendChild(testimonialsSection)
+    contentHomeWrapper.appendChild(testimonialsSection)
 
     // addDecorativeElements(contentHomeWrapper)
 
@@ -132,4 +135,43 @@ function createMenuPreviewSection(){
     })
 
     return menuPreviewSection
+}
+
+function createTestimonialsSection(){
+    const testimonialsSection = document.createElement('div')
+    testimonialsSection.className = 'testimonialsSection'
+
+    const headerReviewContainer = document.createElement('div')
+    headerReviewContainer.className = 'headerReviewContainer'
+    testimonialsSection.appendChild(headerReviewContainer)
+
+    const headerText = document.createElement('p')
+    headerText.className = 'headerText'
+    headerText.textContent = 'TESTIMONIALS'
+    headerReviewContainer.appendChild(headerText)
+
+    const reviewsContainer = document.createElement('div')
+    reviewsContainer.className = 'reviewsContainer'
+    testimonialsSection.appendChild(reviewsContainer)
+
+    const reviews = [
+        {name : 'review1', image : review1},
+        {name : 'review2', image : review2},
+        {name : 'review3', image : review3}
+    ]
+    reviews.forEach((review,index) => {
+        const reviewCard = document.createElement('div')
+        reviewCard.className = 'reviewCard'
+        reviewCard.id = `reviewCard${index + 1}`;
+
+        reviewsContainer.appendChild(reviewCard)
+
+        const reviewCardImg = document.createElement('img')
+        reviewCardImg.className = 'reviewCardImg'
+        reviewCardImg.src = review.image
+        reviewCardImg.alt = review.name
+        reviewCard.appendChild(reviewCardImg)
+    })
+
+    return testimonialsSection
 }
