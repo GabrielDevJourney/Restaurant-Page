@@ -1,0 +1,58 @@
+.footerContainer{
+    display: flex;
+    background-color: var(--footer-background);
+    justify-content: space-around;
+    height: 20vh;
+}
+.logoContainerFooter{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.logoContainerFooter > .logoTextFooter{
+    font-family: var(--font-main);
+    font-size: 2rem;
+    color: white;
+}
+
+.navigationContainerFooter{
+    display: flex;
+    width: 400px;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+.menuNavigationContainer{
+    gap: 1rem;
+}
+.menuNavigationContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+li{    
+    list-style-type: none;
+    margin-bottom: 0.7rem;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-family: var(--font-secondary);
+}
+
+.menuText{
+    font-weight: 200;
+}
+.homeText,
+.menuText,
+.aboutText{
+    color: white;
+    font-family: var(--font-secondary);
+}
+
+.iconsWrapper{
+    margin-top: 1rem;
+}
+.iconContainer{
+    margin-right: 0.5rem;
+}

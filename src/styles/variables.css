@@ -3,6 +3,7 @@
 	--color-accent: #e56e0c; /* dishes-names-and-price-color and btns color */
 	--color-background: #F3EDE1; /* background color */
 	--color-decor: rgba(198, 162, 114, 0.15); /* japonese-letters-decor-color */
+    --footer-background: #1D2544; 
 
 	/* Typography */
 	--font-main: "MainFont", Arial, sans-serif; 
