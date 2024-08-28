@@ -1,107 +1,174 @@
-import facebookIco from '../assets/facebookIco.png'
-import instagramIco from '../assets/instagramIco.png'
-import githubIco from '../assets/githubIco.png'
+import facebookIco from "../assets/facebookIco.png";
+import instagramIco from "../assets/instagramIco.png";
+import githubIco from "../assets/githubIco.png";
 
-function renderFooter(){
-    const footerContainer = document.createElement('div')
-    footerContainer.className = 'footerContainer'
+function renderFooter() {
+	const footerContainer = document.createElement("div");
+	footerContainer.className = "footerContainer";
 
-    const logoContainerFooter = document.createElement('div')
-    logoContainerFooter.className = 'logoContainerFooter'
-    footerContainer.appendChild(logoContainerFooter)
+	const logoContainerFooter = document.createElement("div");
+	logoContainerFooter.className = "logoContainerFooter";
+	footerContainer.appendChild(logoContainerFooter);
 
-    const logoTextFooter = document.createElement('p')
-    logoTextFooter.className = 'logoTextFooter'
-    logoTextFooter.textContent = 'KAIZEN HOUSE'
-    logoContainerFooter.appendChild(logoTextFooter)
+	const logoTextFooter = document.createElement("p");
+	logoTextFooter.className = "logoTextFooter";
+	logoTextFooter.textContent = "KAIZEN HOUSE";
+	logoContainerFooter.appendChild(logoTextFooter);
 
-    const navigationContainerFooter = document.createElement('div')
-    navigationContainerFooter.className = 'navigationContainerFooter'
-    footerContainer.appendChild(navigationContainerFooter)
+	const navigationContainerFooter = document.createElement("div");
+	navigationContainerFooter.className = "navigationContainerFooter";
+	footerContainer.appendChild(navigationContainerFooter);
 
-    const homeNavigationContainer = document.createElement('div')
-    homeNavigationContainer.className = 'homeNavigationContainer'
-    navigationContainerFooter.appendChild(homeNavigationContainer)
+	const homeNavigationContainer = document.createElement("div");
+	homeNavigationContainer.className = "homeNavigationContainer";
+	navigationContainerFooter.appendChild(homeNavigationContainer);
 
-    const menuNavigationContainer = document.createElement('div')
-    menuNavigationContainer.className = 'menuNavigationContainer'
-    navigationContainerFooter.appendChild(menuNavigationContainer)
+	const homeText = document.createElement("a");
+	homeText.className = "homeText";
+	homeText.textContent = "HOME";
+	homeText.href = "#" + homeText.textContent.toLowerCase();
+	homeText.dataset.page = homeText.textContent.toLowerCase();
+	homeText.addEventListener("click", (e) => {
+		e.preventDefault();
+		const navigateEvent = new CustomEvent("navigate", {
+			detail: {
+				page: "home",
+			},
+		});
+		window.dispatchEvent(navigateEvent);
+	});
+	homeNavigationContainer.appendChild(homeText);
 
-    const menuText = document.createElement('p')
-    menuText.className = 'menuText'
-    menuText.textContent = 'MENU'
-    menuNavigationContainer.appendChild(menuText)
+	const menuNavigationContainer = document.createElement("div");
+	menuNavigationContainer.className = "menuNavigationContainer";
+	navigationContainerFooter.appendChild(menuNavigationContainer);
 
-    const categoriesNavigationContainer = document.createElement('div')
-    categoriesNavigationContainer.className = 'categoriesNavigationContainer'
-    menuNavigationContainer.appendChild(categoriesNavigationContainer)
+	const menuText = document.createElement("a");
+	menuText.className = "menuText";
+	menuText.textContent = "MENU";
+	menuText.href = "#" + menuText.textContent.toLowerCase();
+	menuText.dataset.page = menuText.textContent.toLowerCase();
+	menuText.addEventListener("click", (e) => {
+		e.preventDefault();
+		const navigateEvent = new CustomEvent("navigate", {
+			detail: {
+				page: "menu",
+			},
+		});
+		window.dispatchEvent(navigateEvent);
+	});
+	menuNavigationContainer.appendChild(menuText);
 
-    const linksList = document.createElement('ul')
-    linksList.className = 'linksList'
-    categoriesNavigationContainer.appendChild(linksList)
-    const links = [
-        {name : 'sushi'},
-        {name : 'ramen'},
-        {name : 'mochi'},
-        {name : 'onigiri'}
-    ]
-    links.forEach((link) => {
-        const linkHref = document.createElement('a')
-        linkHref.className = 'linkHref'
-        linkHref.id = `linkHref${link.name}`
-        linkHref.textContent = link.name
-        linkHref.href = "#" + link.name.toLowerCase()
-        linkHref.dataset.link = link.name.toLowerCase()
-        linkHref.addEventListener('click', (e) => {
-            e.preventDefault()
-            const navigateEvent = new CustomEvent('navigate' , {
-                detail : {
-                    page : 'menu',
-                    category : link.name.toLocaleLowerCase()
-                }
-            })
-            window.dispatchEvent(navigateEvent)
-        })
+	const categoriesNavigationContainer = document.createElement("div");
+	categoriesNavigationContainer.className = "categoriesNavigationContainer";
+	menuNavigationContainer.appendChild(categoriesNavigationContainer);
 
-        linksList.appendChild(linkHref)
-    })
+	const linksList = document.createElement("ul");
+	linksList.className = "linksList";
+	categoriesNavigationContainer.appendChild(linksList);
+	const links = [
+		{ name: "Sushi" },
+		{ name: "Ramen" },
+		{ name: "Mochi" },
+		{ name: "Onigiri" },
+	];
+	links.forEach((link) => {
+		const listItem = document.createElement("li");
+		listItem.className = "listItem";
+		linksList.appendChild(listItem);
 
-    const aboutContainer = document.createElement('div')
-    aboutContainer.className = 'aboutContainer'
-    navigationContainerFooter.appendChild(aboutContainer)
+		const linkHref = document.createElement("a");
+		listItem.appendChild(linkHref);
+		linkHref.className = "linkHref";
+		linkHref.id = `linkHref${link.name}`;
+		linkHref.textContent = link.name;
+		linkHref.href = "#" + link.name.toLowerCase();
+		linkHref.dataset.link = link.name.toLowerCase();
+		linkHref.addEventListener("click", (e) => {
+			e.preventDefault();
+			const navigateEvent = new CustomEvent("navigate", {
+				detail: {
+					page: "menu",
+					category: link.name.toLocaleLowerCase(),
+				},
+			});
+			window.dispatchEvent(navigateEvent);
+		});
 
-    const aboutTextFooter = document.createElement('p')
-    aboutTextFooter.className = 'aboutTextFooter'
-    aboutTextFooter.textContent = 'ABOUT US'
-    aboutContainer.appendChild(aboutTextFooter)
+		linksList.appendChild(linkHref);
+	});
 
-    const iconsWrapper = document.createElement('div')
-    iconsWrapper.className = 'iconsWrapper'
-    footerContainer.appendChild(iconsWrapper)
+	const aboutContainer = document.createElement("div");
+	aboutContainer.className = "aboutContainer";
+	navigationContainerFooter.appendChild(aboutContainer);
 
-    const iconsToDisplay = [
-        {name : 'facebookIco', image : facebookIco},
-        {name : 'instagramIco', image : instagramIco},
-        {name : 'githubIco', image : githubIco},
-    ]
+	const aboutText = document.createElement("a");
+	aboutText.className = "aboutText";
+	aboutText.textContent = "ABOUT";
+	aboutText.href = "#" + aboutText.textContent.toLowerCase();
+	aboutText.dataset.page = aboutText.textContent.toLowerCase();
+	aboutText.addEventListener("click", (e) => {
+		e.preventDefault();
+		const navigateEvent = new CustomEvent("navigate", {
+			detail: {
+				page: "about",
+			},
+		});
+		window.dispatchEvent(navigateEvent);
+	});
+	aboutContainer.appendChild(aboutText);
 
-    iconsToDisplay.forEach((icon) => {
-        const iconContainer = document.createElement('div')
-        iconContainer.className = 'iconContainer'
-        iconContainer.id = `iconContainer${icon.name}`
-        iconsWrapper.appendChild(iconContainer)
+	const iconsWrapper = document.createElement("div");
+	iconsWrapper.className = "iconsWrapper";
+	footerContainer.appendChild(iconsWrapper);
 
-        const iconImg = document.createElement('img')
-        iconImg.className = `iconImage${icon.name}`
-        iconImg.src = icon.image
-        iconImg.alt = icon.name
+	const iconsToDisplay = [
+		{ name: "facebookIco", image: facebookIco },
+		{ name: "instagramIco", image: instagramIco },
+		{
+			name: "githubIco",
+			image: githubIco,
+			linkToGithub: `https://github.com/GabrielDevJourney/Restaurant-Page`,
+		},
+	];
+
+	function createIconContainer(icon) {
+		const iconContainer = document.createElement("div");
+		iconContainer.className = "iconContainer";
+		iconContainer.id = `iconContainer${icon.name}`;
+		return iconContainer;
+	}
+	function createIconImg(icon) {
+		const iconImg = document.createElement("img");
+		iconImg.className = `iconImage${icon.name}`;
+		iconImg.src = icon.image;
+		iconImg.alt = icon.name;
+
+        return iconImg
+	}
+
+	iconsToDisplay.forEach((icon) => {
+        const iconContainer = createIconContainer(icon)
+        const iconImg = createIconImg(icon)
         iconContainer.appendChild(iconImg)
-    })
 
+		if (icon.name === "githubIco") {
+			const a = document.createElement("a");
+			a.className = "linkToGithub";
+			a.href = icon.linkToGithub;
+            a.target = '_blank'
+            a.rel = 'noopener noreferrer'
 
-    return footerContainer
+			a.appendChild(iconContainer);
+			iconsWrapper.appendChild(a);
+		} else {
+			iconsWrapper.appendChild(iconContainer)
+		}
+	});
+
+	return footerContainer;
 }
 
-renderFooter()
+renderFooter();
 
-export {renderFooter}
+export { renderFooter };
