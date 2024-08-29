@@ -1,0 +1,41 @@
+.menuPageContainer{
+    display: flex;
+    flex-direction: column;
+}
+.headerMenuPageContainer{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerMenuPageText{
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    font-size: 5rem;
+    text-align: center;
+}
+
+.mainContentContainer{
+    display: flex;
+    flex-direction: row;
+}
+.menuCategoriesContainer{
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.japoneseLettersContainer{
+    display: flex;
+    width: 400px;
+    justify-content: center;
+    text-align: center;
+}
+.japoneseText{
+    font-family: var(--font-secondary);
+    width: 250px;
+    font-size: 10rem;
+    color: var(--color-decor);
+    font-weight: 500;
+}

@@ -1,0 +1,59 @@
+.cardContainer{
+    width: 1050px;
+    height: auto;
+    display: grid;
+    grid-template-areas: 
+    ". name name"
+    "img description description"
+    "img extraInfo extraInfo"
+    ". . btn"
+    ;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    border: 2px var(--color-primary) solid;
+    border-radius: 60px 0 60px 0;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+.categorySectionHeadingText{
+    padding: 4.5rem 0 0 2rem;
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    font-size: 4rem;
+}
+.imgContainer,
+.priceNamePiecesContainer,
+.descriptionContainer,
+.extraInfoContainer,
+.dishCardBtnContainer{
+    padding: 0.5rem;
+}
+.imgContainer{
+    grid-area: img;
+}
+
+.priceNamePiecesContainer{
+    grid-area: name;
+}
+.nameAndPriceText{
+    font-family: var(--font-main);
+    font-size: 2rem;
+    color: var(--color-accent);
+}
+.piecesText{
+    font-family: var(--font-secondary);
+    color: var(--color-primary);
+}
+
+.descriptionContainer{
+    grid-area: description;
+}
+
+.extraInfoContainer{
+    grid-area: extraInfo;
+}
+
+.dishCardBtnContainer{
+    grid-area: btn;
+}

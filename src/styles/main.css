@@ -8,6 +8,7 @@
 @import "footer.css";
 /* import pages content stylings */
 @import "homeContent.css";
+@import "menu.css";
 
 * {
 	margin: 0;
