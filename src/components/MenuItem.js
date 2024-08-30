@@ -36,9 +36,7 @@ export function createDishCard(dish, category) {
 	descriptionContainer.appendChild(descriptionText);
 
 	if (
-		category === "RAMEN" ||
-		category === "ONIGIRI" ||
-		category === "MOCHI"
+		category !== 'SUSHI'
 	) {
 		const ingredientsListText = document.createElement("p");
 		ingredientsListText.className = "ingridientsText";
