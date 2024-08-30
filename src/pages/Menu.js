@@ -65,7 +65,7 @@ export function renderMenuPage() {
 
 	const japoneseText = document.createElement("p");
 	japoneseText.className = "japoneseText";
-	japoneseText.textContent = "お食事をお楽 しみください！";
+	japoneseText.textContent = "お食事をお楽 しみください";
 	japoneseLettersContainer.appendChild(japoneseText);
 
 	return menuPageContainer;
