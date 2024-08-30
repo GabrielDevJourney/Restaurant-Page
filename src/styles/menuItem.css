@@ -13,7 +13,8 @@
     border: 2px var(--color-primary) solid;
     border-radius: 60px 0 60px 0;
     padding: 1rem;
-    margin: 0.5rem;
+    margin: 0.5rem 0 1rem 0;
+    letter-spacing: 1px;
 }
 
 .categorySectionHeadingText{
@@ -22,17 +23,22 @@
     color: var(--color-primary);
     font-size: 4rem;
 }
-.imgContainer,
+.imgContainer{
+    padding: 0.5rem;
+}
 .priceNamePiecesContainer,
 .descriptionContainer,
 .extraInfoContainer,
 .dishCardBtnContainer{
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0;
 }
 .imgContainer{
     grid-area: img;
 }
-
+.imgToDisplay{
+    width: 298px;
+    height: 213px;
+}
 .priceNamePiecesContainer{
     grid-area: name;
 }
@@ -49,6 +55,19 @@
 .descriptionContainer{
     grid-area: description;
 }
+.descritptionText{
+    padding-bottom: 0.5rem;
+}
+.descritptionText,
+.extraInfoText,
+.ingridientsText{
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-weight: 500;
+}
+.ingredientsLabel{
+    font-weight: bold;
+}
 
 .extraInfoContainer{
     grid-area: extraInfo;
@@ -56,4 +75,15 @@
 
 .dishCardBtnContainer{
     grid-area: btn;
+}
+.cardBtnAddToCart{
+    width: 280px;
+    height: 65px;
+    background-color: var(--color-background);
+    font-family: var(--font-main);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    border: 2px var(--color-accent) solid;
+    border-radius: 30px 0 30px 0 ;
 }
