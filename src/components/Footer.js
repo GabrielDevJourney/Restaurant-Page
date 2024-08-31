@@ -98,16 +98,16 @@ function renderFooter() {
 		linksList.appendChild(linkHref);
 	});
 
-	const aboutContainer = document.createElement("div");
-	aboutContainer.className = "aboutContainer";
-	navigationContainerFooter.appendChild(aboutContainer);
+	const aboutContainerFooter = document.createElement("div");
+	aboutContainerFooter.className = "aboutContainerFooter";
+	navigationContainerFooter.appendChild(aboutContainerFooter);
 
-	const aboutText = document.createElement("a");
-	aboutText.className = "aboutText";
-	aboutText.textContent = "ABOUT";
-	aboutText.href = "#" + aboutText.textContent.toLowerCase();
-	aboutText.dataset.page = aboutText.textContent.toLowerCase();
-	aboutText.addEventListener("click", (e) => {
+	const aboutTextFooter = document.createElement("a");
+	aboutTextFooter.className = "aboutTextFooter";
+	aboutTextFooter.textContent = "ABOUT";
+	aboutTextFooter.href = "#" + aboutTextFooter.textContent.toLowerCase();
+	aboutTextFooter.dataset.page = aboutTextFooter.textContent.toLowerCase();
+	aboutTextFooter.addEventListener("click", (e) => {
 		e.preventDefault();
 		const navigateEvent = new CustomEvent("navigate", {
 			detail: {
@@ -116,7 +116,7 @@ function renderFooter() {
 		});
 		window.dispatchEvent(navigateEvent);
 	});
-	aboutContainer.appendChild(aboutText);
+	aboutContainerFooter.appendChild(aboutTextFooter);
 
 	const iconsWrapper = document.createElement("div");
 	iconsWrapper.className = "iconsWrapper";
