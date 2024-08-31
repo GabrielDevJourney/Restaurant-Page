@@ -45,7 +45,7 @@ a{
 }
 .homeText,
 .menuText,
-.aboutText{
+.aboutTextFooter{
     color: white;
     font-family: var(--font-secondary);
 }

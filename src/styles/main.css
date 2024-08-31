@@ -9,6 +9,7 @@
 /* import pages content stylings */
 @import "homeContent.css";
 @import "menu.css";
+@import "about.css";
 
 * {
 	margin: 0;
