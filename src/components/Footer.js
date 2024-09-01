@@ -5,6 +5,8 @@ import githubIco from "../assets/githubIco.png";
 function renderFooter() {
 	const footerContainer = document.createElement("div");
 	footerContainer.className = "footerContainer";
+    footerContainer.id = "footer"
+    footerContainer.classList.add("animate__animated", "animate__fadeIn");
 
 	const logoContainerFooter = document.createElement("div");
 	logoContainerFooter.className = "logoContainerFooter";
@@ -168,7 +170,5 @@ function renderFooter() {
 
 	return footerContainer;
 }
-
-renderFooter();
 
 export { renderFooter };
