@@ -1,9 +1,18 @@
 import './styles/main.css'
 import { Header } from "./components/Header.js";
-import {renderFooter} from './components/Footer.js'
 import { initRouter } from './router.js';
+import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({
+        duration: 1000,
+        once: true
+    })
+
 	const body = document.body;
 
 	const header = new Header();
@@ -14,11 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(content)
 
     initRouter(header)
-
-	// const main = document.createElement("main");
-	// main.appendChild(renderHomePage());
-	// body.appendChild(main);
-
-	const footer = renderFooter();
-	body.appendChild(footer);
 });
