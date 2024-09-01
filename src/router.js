@@ -44,17 +44,13 @@ function updatePageContent(page, category = null) {
         contentDiv.appendChild(routes[page]());
 
         if(page === 'menu' && category){
-        console.log("Attempting to scroll to:", category);
 		setTimeout(() => {
 			const categoryElement = document.getElementById(category);
-			console.log("Category:", category, "Element:", categoryElement);
 			if (categoryElement) {
 				categoryElement.scrollIntoView({
 					behavior: "smooth",
 					block: "start",
 				});
-			} else {
-				console.log("Category element not found for:", category);
 			}
 		}, 300);// delay to ensure render
         }
