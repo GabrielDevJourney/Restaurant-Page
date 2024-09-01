@@ -16,6 +16,11 @@ module.exports = {
 			{
 				test: /\.css$/i,
 				use: [MiniCssExtractPlugin.loader, "css-loader"],
+				include: [
+					path.resolve(__dirname, "src"),
+					path.resolve(__dirname, "node_modules/animate.css"),
+					path.resolve(__dirname, "node_modules/aos/dist"),
+				],
 			},
 			{
 				test: /\.(png|svg|jpg|jpeg|gif)$/i,
