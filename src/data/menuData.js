@@ -76,7 +76,7 @@ const menuData = [
 	// Onigiri array
 
 	{
-		category: "ONIGIRI ",
+		category: "ONIGIRI",
 		dishes: [
 			{
 				name: "NINJA'S POUCH",
@@ -107,7 +107,7 @@ const menuData = [
 	// Mochis array
 
 	{
-		category: "MOCHI ",
+		category: "MOCHI",
 		dishes: [
 			{
 				name: "HANAMI BLOSSOM",

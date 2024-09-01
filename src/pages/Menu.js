@@ -8,6 +8,7 @@ function createCategorySection(categoryData) {
 	} //DEBUG
 
 	const categorySection = document.createElement("div");
+    categorySection.id = categoryData.category.toLowerCase()
 	categorySection.className = `${categoryData.category.toLowerCase()}-categorySection`;
 
 	const categorySectionHeading = document.createElement("p");
