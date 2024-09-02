@@ -3,6 +3,7 @@
 	--color-accent: #e56e0c; /* dishes-names-and-price-color and btns color */
 	--color-background: #F3EDE1; /* background color */
 	--color-decor: rgba(198, 162, 114, 0.15); /* japonese-letters-decor-color */
+    --color-for-animation-cards: rgba(51,63,114,0.7);
     --footer-background: #1D2544; 
 
 	/* Typography */
