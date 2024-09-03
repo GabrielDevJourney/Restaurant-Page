@@ -1,7 +1,9 @@
+import { addToCart } from "../utils/cartFunction";
 
 export function createDishCard(dish, category) {
 	const cardContainer = document.createElement("div");
 	cardContainer.className = "cardContainer";
+	cardContainer.dataset.itemId = dish.id;
 
 	const imgContainer = document.createElement("div");
 	imgContainer.className = "imgContainer";
@@ -9,8 +11,8 @@ export function createDishCard(dish, category) {
 
 	const imgToDisplay = document.createElement("img");
 	imgToDisplay.className = "imgToDisplay";
-	imgToDisplay.src = dish.image
-    imgContainer.appendChild(imgToDisplay);
+	imgToDisplay.src = dish.image;
+	imgContainer.appendChild(imgToDisplay);
 
 	const priceNamePiecesContainer = document.createElement("div");
 	priceNamePiecesContainer.className = "priceNamePiecesContainer";
@@ -35,9 +37,7 @@ export function createDishCard(dish, category) {
 	descriptionText.textContent = `${dish.description}`;
 	descriptionContainer.appendChild(descriptionText);
 
-	if (
-		category !== 'SUSHI'
-	) {
+	if (category !== "SUSHI") {
 		const ingredientsListText = document.createElement("p");
 		ingredientsListText.className = "ingridientsText";
 
@@ -67,7 +67,13 @@ export function createDishCard(dish, category) {
 
 	const cardBtnAddToCart = document.createElement("button");
 	cardBtnAddToCart.className = "cardBtnAddToCart";
+	cardBtnAddToCart.dataset.itemId = dish.id;
 	cardBtnAddToCart.textContent = "Add To Cart";
+
+	cardBtnAddToCart.addEventListener("click", () => {
+		addToCart(dish.id, dish.name, dish.price);
+	});
+
 	dishCardBtnContainer.appendChild(cardBtnAddToCart);
 
 	return cardContainer;

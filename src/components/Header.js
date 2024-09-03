@@ -1,9 +1,19 @@
 import cartIconUrl from "../assets/cartIcon.png";
+import {
+	initializeCart,
+    updateCartCounter,
+} from "../utils/cartFunction.js";
 export class Header {
 	constructor() {
 		this.pages = ["Home", "Menu", "About"];
 		this.element = this.createHeader();
 		this.navLinks = this.element.querySelectorAll(".navContainer a");
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeCart()
+
+            window.updateCartCounter = updateCartCounter
+        })
 	}
 	createHeader() {
 		const headerContainer = document.createElement("div");
@@ -27,7 +37,7 @@ export class Header {
 			a.textContent = page;
 			// i learned this today(19/08/24) so this will create a data*(data-page) attribute and will set it to the page name in lowercase known as a best practice since i will reuse the value for routing pages
 			a.dataset.page = page.toLowerCase();
-            a.addEventListener("click", (e) => {
+			a.addEventListener("click", (e) => {
 				e.preventDefault();
 				console.log("Link clicked:", e.target.dataset.page); // Add this debug log
 				window.navigateTo(e.target.dataset.page);
@@ -40,15 +50,18 @@ export class Header {
 		//ICON CONTAINER
 		const iconContainer = document.createElement("div");
 		iconContainer.className = "iconContainer";
+
 		const cartIcon = document.createElement("img");
 		cartIcon.className = "cartIcon";
 		cartIcon.src = cartIconUrl;
 		cartIcon.alt = "Cart";
+
 		const cartItemCount = document.createElement("span");
 		cartItemCount.className = "cartCounter";
 		cartItemCount.textContent = "0";
 		iconContainer.appendChild(cartIcon);
 		iconContainer.appendChild(cartItemCount);
+
 		headerContainer.appendChild(iconContainer);
 
 		return headerContainer;

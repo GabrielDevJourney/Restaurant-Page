@@ -3,12 +3,15 @@ import ramenMenu from "../assets/ramenMenu.svg";
 import mochiMenu from "../assets/mochiMenu.svg";
 import onigiriMenu from "../assets/onigiriMenu.svg";
 
+let dishId = 1
+
 const menuData = [
 	// Sushi array
 	{
 		category: "SUSHI",
 		dishes: [
 			{
+				id: dishId++,
 				name: "EMPEROR'S FEAST",
 				quantity: "(30 pieces)",
 				price: "$24.95",
@@ -19,6 +22,7 @@ const menuData = [
 				image: sushiMenu,
 			},
 			{
+				id: dishId++,
 				name: "SHOGUN XL",
 				quantity: "(26 pieces)",
 				price: "$49.95",
@@ -29,6 +33,7 @@ const menuData = [
 				image: sushiMenu,
 			},
 			{
+				id: dishId++,
 				name: "DAIMYO L",
 				price: "$37.95",
 				quantity: "(20 pieces)",
@@ -47,6 +52,7 @@ const menuData = [
 		category: "RAMEN",
 		dishes: [
 			{
+				id: dishId++,
 				name: "GEISHA'S SECRET",
 				quantity: "(Single Serving)",
 				price: "$17.95",
@@ -59,6 +65,7 @@ const menuData = [
 				image: ramenMenu,
 			},
 			{
+				id: dishId++,
 				name: "RONIN'S RESPITE ",
 				quantity: "(Single Serving)",
 				price: "$15.95",
@@ -79,6 +86,7 @@ const menuData = [
 		category: "ONIGIRI",
 		dishes: [
 			{
+				id: dishId++,
 				name: "NINJA'S POUCH",
 				quantity: "(2 pieces)",
 				price: "$4.95",
@@ -90,6 +98,7 @@ const menuData = [
 				image: onigiriMenu,
 			},
 			{
+				id: dishId++,
 				name: "SUMO'S STRENGTH",
 				quantity: "(2 pieces",
 				price: "$5.95",
@@ -110,6 +119,7 @@ const menuData = [
 		category: "MOCHI",
 		dishes: [
 			{
+				id: dishId++,
 				name: "HANAMI BLOSSOM",
 				quantity: "(2 pieces)",
 				price: "$6.95",
@@ -122,6 +132,7 @@ const menuData = [
 				image: mochiMenu,
 			},
 			{
+				id: dishId++,
 				name: "ZEN GARDEN",
 				quantity: "(2 pieces)",
 				price: "$6.95",
