@@ -8,7 +8,7 @@ export function updateCartCounter() {
 	}
 }
 
-export function addToCart(itemId, itemName, price) {
+export function addToCart(itemId, itemName, price, image) {
     const existingItem = cartItems.find((item) => item.id === itemId);
 	if (existingItem) {
 		existingItem.quantity += 1;
@@ -17,6 +17,7 @@ export function addToCart(itemId, itemName, price) {
 			id: itemId,
 			name: itemName,
 			price: price,
+            image: image,
 			quantity: 1,
 		});
 	}

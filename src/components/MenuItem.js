@@ -71,7 +71,7 @@ export function createDishCard(dish, category) {
 	cardBtnAddToCart.textContent = "Add To Cart";
 
 	cardBtnAddToCart.addEventListener("click", () => {
-		addToCart(dish.id, dish.name, dish.price);
+		addToCart(dish.id, dish.name, dish.price, dish.image);
 	});
 
 	dishCardBtnContainer.appendChild(cardBtnAddToCart);
