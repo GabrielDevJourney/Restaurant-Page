@@ -6,6 +6,7 @@
 @import "header.css";
 @import "menuItem.css";
 @import "footer.css";
+@import 'cartModal.css';
 /* import pages content stylings */
 @import "homeContent.css";
 @import "menu.css";
