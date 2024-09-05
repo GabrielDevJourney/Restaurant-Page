@@ -20,7 +20,7 @@ export function createDishCard(dish, category) {
 
 	const nameAndPriceText = document.createElement("p");
 	nameAndPriceText.className = "nameAndPriceText";
-	nameAndPriceText.textContent = `${dish.name} - ${dish.price}`;
+	nameAndPriceText.textContent = `${dish.name} - $${dish.price}`;
 	priceNamePiecesContainer.appendChild(nameAndPriceText);
 
 	const piecesText = document.createElement("p");
