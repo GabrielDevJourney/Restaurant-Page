@@ -4,7 +4,15 @@ import { initRouter } from './router.js';
 import 'animate.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { loadCartData, getCartItems } from "./utils/cartFunction.js";
+import { itemsCartContainer, populateCartModal, showModal } from "./components/cartModal.js";
 
+function initializeCart(){
+    const cartItems = getCartItems()
+    populateCartModal(cartItems)
+}
+
+document.body.appendChild(itemsCartContainer)
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,3 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initRouter(header)
 });
+
+initializeCart()
