@@ -14,7 +14,7 @@ const menuData = [
 				id: dishId++,
 				name: "EMPEROR'S FEAST",
 				quantity: "(30 pieces)",
-				price: "$24.95",
+				price: "24.95",
 				description:
 					"Imperial Sushi Banquet Majestic array of traditional sushi and sashimi, fit for an emperor",
 				allergens:
@@ -25,7 +25,7 @@ const menuData = [
 				id: dishId++,
 				name: "SHOGUN XL",
 				quantity: "(26 pieces)",
-				price: "$49.95",
+				price: "49.95",
 				description:
 					"Luxurious Sushi Assortment A grand selection of fusion sushi and sashimi, curated by our master chef.",
 				allergens:
@@ -35,7 +35,7 @@ const menuData = [
 			{
 				id: dishId++,
 				name: "DAIMYO L",
-				price: "$37.95",
+				price: "37.95",
 				quantity: "(20 pieces)",
 				description:
 					"Feudal Lord's Sushi Set Elegant selection of fusion sushi and sashimi, befitting a feudal lord's taste.",
@@ -55,7 +55,7 @@ const menuData = [
 				id: dishId++,
 				name: "GEISHA'S SECRET",
 				quantity: "(Single Serving)",
-				price: "$17.95",
+				price: "17.95",
 				description:
 					"Deluxe Miso Ramen An elegant blend of flavors as mysterious and alluring as a geisha, featuring a robust miso-based broth and an array of refined toppings.",
 				ingredients:
@@ -68,7 +68,7 @@ const menuData = [
 				id: dishId++,
 				name: "RONIN'S RESPITE ",
 				quantity: "(Single Serving)",
-				price: "$15.95",
+				price: "15.95",
 				description:
 					"Rich Tonkotsu Ramen A wandering warrior's comfort: creamy pork bone broth topped with premium ingredients to restore your spirit and strength.",
 				ingredients:
@@ -89,7 +89,7 @@ const menuData = [
 				id: dishId++,
 				name: "NINJA'S POUCH",
 				quantity: "(2 pieces)",
-				price: "$4.95",
+				price: "4.95",
 				description:
 					"A stealthy blend of flavors, as surprising and potent as a ninja's secret weapon.Triangle-shaped rice ball filled with tangy umeboshi (pickled plum), wrapped in crisp nori seaweed. The sour and salty umeboshi provides a bold contrast to the subtle flavor of perfectly seasoned sushi rice, creating a harmonious balance that awakens the palate.",
 				ingredients:
@@ -101,7 +101,7 @@ const menuData = [
 				id: dishId++,
 				name: "SUMO'S STRENGTH",
 				quantity: "(2 pieces",
-				price: "$5.95",
+				price: "5.95",
 				description:
 					"A hearty rice ball that packs the protein punch of a sumo wrestler's power.Large, round onigiri filled with flaky grilled salmon and a touch of mayonnaise, lightly grilled for a crispy exterior. The rich, smoky flavor of the salmon complements the subtle sweetness of the rice, while the crispy exterior adds a delightful textural contrast.",
 				ingredients:
@@ -122,7 +122,7 @@ const menuData = [
 				id: dishId++,
 				name: "HANAMI BLOSSOM",
 				quantity: "(2 pieces)",
-				price: "$6.95",
+				price: "6.95",
 				description:
 					"Delicate cherry blossom flavored mochi, as enchanting as a spring day in Japan.Soft, pink-hued mochi infused with subtle cherry blossom flavor, filled with sweet red bean paste, and wrapped in a pickled sakura leaf. A seasonal delight that captures the essence of Japan's famous cherry blossom festivals.",
 				ingredients:
@@ -135,7 +135,7 @@ const menuData = [
 				id: dishId++,
 				name: "ZEN GARDEN",
 				quantity: "(2 pieces)",
-				price: "$6.95",
+				price: "6.95",
 				description:
 					"A meditative journey of flavor, inspired by the tranquility of Japanese rock gardens.Vibrant green mochi with a rich matcha flavor, filled with a smooth white chocolate ganache. The slight bitterness of the matcha perfectly balances the sweetness of the filling, creating a harmonious taste experience.",
 				ingredients:
