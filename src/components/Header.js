@@ -3,6 +3,9 @@ import {
 	initializeCart,
     updateCartCounter,
 } from "../utils/cartFunction.js";
+import { showModal, itemsCartContainer } from "./cartModal.js";
+
+document.body.appendChild(itemsCartContainer);
 export class Header {
 	constructor() {
 		this.pages = ["Home", "Menu", "About"];
@@ -50,6 +53,12 @@ export class Header {
 		//ICON CONTAINER
 		const iconContainer = document.createElement("div");
 		iconContainer.className = "iconContainer";
+        
+        const cartHeaderBtn = document.createElement('button')
+        cartHeaderBtn.className = 'cartBtn'
+        cartHeaderBtn.addEventListener('click', showModal)
+        iconContainer.appendChild(cartHeaderBtn)
+
 
 		const cartIcon = document.createElement("img");
 		cartIcon.className = "cartIcon";
@@ -59,8 +68,8 @@ export class Header {
 		const cartItemCount = document.createElement("span");
 		cartItemCount.className = "cartCounter";
 		cartItemCount.textContent = "0";
-		iconContainer.appendChild(cartIcon);
-		iconContainer.appendChild(cartItemCount);
+		cartHeaderBtn.appendChild(cartIcon);
+		cartHeaderBtn.appendChild(cartItemCount);
 
 		headerContainer.appendChild(iconContainer);
 
