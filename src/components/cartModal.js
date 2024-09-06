@@ -8,6 +8,7 @@ import {
 const itemsCartContainer = document.createElement("div");
 itemsCartContainer.className = "itemsCartContainer";
 
+
 export function showModal() {
 	itemsCartContainer.style.display = "block";
 	populateCartModal();
@@ -107,9 +108,17 @@ export function populateCartModal() {
 
 	itemsCartContainer.innerHTML = "";
 
+    const allInWrapper = document.createElement('div')
+    allInWrapper.className = 'allInWrapper'
+    itemsCartContainer.appendChild(allInWrapper)
+
+    const closeCartAndItemCardsContainer = document.createElement("div");
+	closeCartAndItemCardsContainer.className = "closeCartItemCardsWrapper";
+	allInWrapper.appendChild(closeCartAndItemCardsContainer);
+
 	const closeCartContainer = document.createElement("div");
 	closeCartContainer.className = "closeCartContainer";
-	itemsCartContainer.appendChild(closeCartContainer);
+	closeCartAndItemCardsContainer.appendChild(closeCartContainer);
 
 	const closeCartBtn = document.createElement("button");
 	closeCartBtn.className = "closeCartBtn";
@@ -125,7 +134,7 @@ export function populateCartModal() {
 	cartItems.forEach((item) => {
 		const itemCard = createCartItemCard();
 		populateCartItem(itemCard, item);
-		itemsCartContainer.appendChild(itemCard);
+		closeCartAndItemCardsContainer.appendChild(itemCard);
 	});
 
 	// Create and append checkout section
@@ -149,7 +158,7 @@ export function populateCartModal() {
 	checkoutBtn.textContent = "CHECKOUT";
 	checkoutBtnContainer.appendChild(checkoutBtn);
 
-	itemsCartContainer.appendChild(checkoutContainer);
+	allInWrapper.appendChild(checkoutContainer);
 
 	updateTotalPrice();
 }
