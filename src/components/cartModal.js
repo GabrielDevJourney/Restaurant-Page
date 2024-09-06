@@ -80,14 +80,14 @@ export function createCartItemCard() {
 	closeAndPriceContainer.className = "closeAndPriceContainer";
 	cartIemDetailsContainer.appendChild(closeAndPriceContainer);
 
-	const closeContainer = document.createElement("div");
-	closeContainer.className = "closeContainer";
-	closeAndPriceContainer.appendChild(closeContainer);
+	const closeCardContainer = document.createElement("div");
+	closeCardContainer.className = "closeCardContainer";
+	closeAndPriceContainer.appendChild(closeCardContainer);
 
 	const closeBtn = document.createElement("button");
 	closeBtn.className = "closeBtn";
 	closeBtn.textContent = "X";
-	closeContainer.appendChild(closeBtn);
+	closeCardContainer.appendChild(closeBtn);
 
 	const priceContainer = document.createElement("div");
 	priceContainer.className = "priceContainer";
@@ -107,6 +107,16 @@ export function populateCartModal() {
 
 	itemsCartContainer.innerHTML = "";
 
+    const closeCartContainer = document.createElement("div");
+	closeCartContainer.className = "closeCartContainer";
+	itemsCartContainer.appendChild(closeCartContainer);
+
+	const closeCartBtn = document.createElement("button");
+	closeCartBtn.className = "closeCartBtn";
+	closeCartBtn.textContent = "X";
+	closeCartBtn.addEventListener("click", hideModal);
+	closeCartContainer.appendChild(closeCartBtn);
+    
 	if (cartItems.length === 0) {
 		itemsCartContainer.innerHTML = "<p>Your cart is empty</p>";
 		return;
