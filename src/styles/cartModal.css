@@ -2,9 +2,127 @@
     display: none;
     position: absolute;
     top: 50%;
-    left: 50%;
-    border: 1px black solid;
+    left: 30%;
     z-index: 99;
     width: 800px;
-    height: 800px;
+    height: auto;
+    background-color: var(--color-background);
+    border-radius: 80px;
+    box-shadow: 10px 10px 25px 0 var(--modal-border-color);
+    font-family: var(--font-main);
+}
+
+.allInWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+.closeCartContainer{
+    margin: 2rem 3rem 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.closeCartBtn{
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    font-family: var(--font-main);
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+.itemCartCardContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px var(--color-primary) solid;
+    border-radius: 30px;
+    margin: 0 1rem 2rem;
+    padding: 1rem;
+
+}
+
+.cartItemDetailsContainer{
+    width: 60%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nameCartItemText{
+    font-size: 2rem;
+    color: var(--color-accent);
+}
+
+.changeQuantityContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    color: var(--color-primary);
+}
+
+
+.quantityText{
+    font-size: 1.5rem;
+}
+.decreaseBtn,
+.increaseBtn,
+.closeBtn{
+    background-color: transparent;
+    font-family: var(--font-main);
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    font-size: 2rem;
+}
+
+.priceText{
+    font-size: 1.5rem;
+    color: var(--color-accent);
+}
+
+.closeAndPriceContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 95%;
+}
+
+.checkoutContainer{
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px var(--color-decor) solid;
+}
+.totalPriceContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+.totalPriceText{
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+.checkoutBtnContainer{
+    width: 100%;
+}
+.checkoutBtn{
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    padding: 0.5rem;
+    color: var(--color-accent);
+    font-family: var(--font-main);
+    background-color: transparent;
+    border: 2px var(--color-accent) solid;
+    border-radius: 80px;
+    cursor: pointer;
 }

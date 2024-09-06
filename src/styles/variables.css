@@ -6,6 +6,9 @@
     --color-for-animation-cards: rgba(51,63,114,0.7);
     --footer-background: #1D2544; 
 
+    /* modal variables */
+    --modal-border-color: rgba(198,162,114,80%);
+
 	/* Typography */
 	--font-main: "MainFont", Arial, sans-serif; 
 	--font-secondary: "SecondaryFont", Helvetica, sans-serif;
