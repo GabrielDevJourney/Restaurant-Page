@@ -107,7 +107,7 @@ export function populateCartModal() {
 
 	itemsCartContainer.innerHTML = "";
 
-    const closeCartContainer = document.createElement("div");
+	const closeCartContainer = document.createElement("div");
 	closeCartContainer.className = "closeCartContainer";
 	itemsCartContainer.appendChild(closeCartContainer);
 
@@ -116,7 +116,7 @@ export function populateCartModal() {
 	closeCartBtn.textContent = "X";
 	closeCartBtn.addEventListener("click", hideModal);
 	closeCartContainer.appendChild(closeCartBtn);
-    
+
 	if (cartItems.length === 0) {
 		itemsCartContainer.innerHTML = "<p>Your cart is empty</p>";
 		return;
@@ -237,10 +237,11 @@ function populateCartItem(itemElement, itemData) {
 
 function updateTotalPrice() {
 	const cartItems = getCartItems();
-	const totalPriceElement = itemsCartContainer.querySelector(".totalPriceText");
+	const totalPriceElement =
+		itemsCartContainer.querySelector(".totalPriceText");
 
 	const total = cartItems.reduce(
-		(sum, item) => sum + (item.quantity * item.price),
+		(sum, item) => sum + item.quantity * item.price,
 		0
 	);
 	if (totalPriceElement) {
@@ -254,9 +255,12 @@ function updateItemInDOM(itemElement, item) {
 	const quantityText = itemElement.querySelector(".quantityText");
 	const priceText = itemElement.querySelector(".priceText");
 
-	if (quantityText) quantityText.textContent = item.quantity.toString();
-	if (priceText)
+	if (quantityText) {
+		quantityText.textContent = item.quantity.toString();
+	}
+	if (priceText) {
 		priceText.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
+	}
 }
 
 export { itemsCartContainer };

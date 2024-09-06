@@ -44,6 +44,7 @@ export function increaseQuantity(itemId) {
 	}
 
 	item.quantity++;
+    totalItemsInCart++;
 
 	const itemElement = document.querySelector(`[data-item-id="${itemId}]`);
 	if (itemElement) {
@@ -52,8 +53,9 @@ export function increaseQuantity(itemId) {
 
 		const priceText = itemElement.querySelector(".priceText");
 		priceText.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
+    
 	} else {
-		console.error("Item element not found in DOM");
+        console.error("Item element not found in DOM");
 	}
     updateCartCounter()
 	return item;
