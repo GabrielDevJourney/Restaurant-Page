@@ -8,14 +8,21 @@ import {
 const itemsCartContainer = document.createElement("div");
 itemsCartContainer.className = "itemsCartContainer";
 
-
 export function showModal() {
 	itemsCartContainer.style.display = "block";
+	const content = document.getElementById("content");
+	if (content) {
+		content.style.opacity = "0.45";
+	}
 	populateCartModal();
 }
 
 export function hideModal() {
 	itemsCartContainer.style.display = "none";
+	const content = document.getElementById("content");
+	if (content) {
+		content.style.opacity = "1";
+	}
 }
 
 export function createCartItemCard() {
@@ -108,11 +115,11 @@ export function populateCartModal() {
 
 	itemsCartContainer.innerHTML = "";
 
-    const allInWrapper = document.createElement('div')
-    allInWrapper.className = 'allInWrapper'
-    itemsCartContainer.appendChild(allInWrapper)
+	const allInWrapper = document.createElement("div");
+	allInWrapper.className = "allInWrapper";
+	itemsCartContainer.appendChild(allInWrapper);
 
-    const closeCartAndItemCardsContainer = document.createElement("div");
+	const closeCartAndItemCardsContainer = document.createElement("div");
 	closeCartAndItemCardsContainer.className = "closeCartItemCardsWrapper";
 	allInWrapper.appendChild(closeCartAndItemCardsContainer);
 
@@ -127,7 +134,7 @@ export function populateCartModal() {
 	closeCartContainer.appendChild(closeCartBtn);
 
 	if (cartItems.length === 0) {
-        showCartEmptyMessage()
+		showCartEmptyMessage();
 	}
 	// Create and append item cards
 	cartItems.forEach((item) => {
@@ -161,12 +168,13 @@ export function populateCartModal() {
 
 	updateTotalPrice();
 }
-function showCartEmptyMessage(){
-    const emptyCartMessage = document.createElement('p')
-    emptyCartMessage.className = 'emptyCartMessage'
-    emptyCartMessage.textContent = 'Your Cart Is Empty'
-    itemsCartContainer.appendChild(emptyCartMessage)
+function showCartEmptyMessage() {
+	const emptyCartMessage = document.createElement("p");
+	emptyCartMessage.className = "emptyCartMessage";
+	emptyCartMessage.textContent = "Your Cart Is Empty";
+	itemsCartContainer.appendChild(emptyCartMessage);
 }
+
 function populateCartItem(itemElement, itemData) {
 	console.log("populating", itemData);
 
