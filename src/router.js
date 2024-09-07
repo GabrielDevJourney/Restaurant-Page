@@ -3,6 +3,7 @@ import { renderMenuPage } from "./pages/Menu.js";
 import { renderAboutPage } from "./pages/About.js";
 import AOS from "aos";
 import { renderFooter } from "./components/Footer.js";
+import { initNavigation, navigateTo } from "./navigation.js";
 
 const routes = {
 	home: renderHomePage,
@@ -13,15 +14,6 @@ const routes = {
 export function initRouter(header) {
 	let footerElement = null;
 
-	window.navigateTo = (page, category = null) => {
-		console.log("Navigating to:", page); // Add this debug log
-		const normalizedPage = page.toLowerCase();
-		window.location.hash = normalizedPage;
-		header.updateActiveLink(normalizedPage);
-		updatePageContent(normalizedPage, category);
-	};
-
-	//UPDATE PAGE COTENT
 	function updatePageContent(page, category = null) {
 		const contentDiv = document.getElementById("content");
 		contentDiv.innerHTML = ""; // Clear current content
@@ -86,19 +78,8 @@ export function initRouter(header) {
 			}
 		}, 300);
 	}
-	window.addEventListener("navigate", (event) => {
-		updatePageContent(event.detail.page, event.detail.category);
-	});
 
-	// Handle initial page load and browser back/forward
-	window.addEventListener("hashchange", () => {
-		const hash = window.location.hash.slice(1) || "home";
-		const [page, category] = hash.split("/");
-		updatePageContent(page, category);
-	});
+	initNavigation(header, updatePageContent);
 
-	// Initial page load
-	const initialHash = window.location.hash.slice(1);
-	const [initialPage, initialCategory] = initialHash.split("/");
-	updatePageContent(initialPage || "home", initialCategory);
+    window.navigateTo = navigateTo
 }

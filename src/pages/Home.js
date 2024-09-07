@@ -6,6 +6,7 @@ import onigiriImage from "../assets/onigiriMenu.svg";
 import review1 from "../assets/review1.png";
 import review2 from "../assets/review2.png";
 import review3 from "../assets/review3.png";
+import { navigateTo } from "../navigation";
 
 export function renderHomePage() {
 	const contentHomeWrapper = document.createElement("div");
@@ -54,10 +55,7 @@ function createHeroSection() {
 	heroCtaBtn.className = "heroCtaBtn";
 	heroCtaBtn.textContent = "Order Now";
 	heroCtaBtn.addEventListener("click", () => {
-		const navigateEvent = new CustomEvent("navigate", {
-			detail: { page: "menu" },
-		});
-		window.dispatchEvent(navigateEvent);
+		navigateTo("menu");
 	});
 	heroSection.appendChild(heroCtaBtn);
 

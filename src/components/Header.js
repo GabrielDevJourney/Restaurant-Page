@@ -1,8 +1,5 @@
 import cartIconUrl from "../assets/cartIcon.png";
-import {
-	initializeCart,
-    updateCartCounter,
-} from "../utils/cartFunction.js";
+import { initializeCart, updateCartCounter } from "../utils/cartFunction.js";
 import { showModal, itemsCartContainer } from "./cartModal.js";
 
 document.body.appendChild(itemsCartContainer);
@@ -12,11 +9,11 @@ export class Header {
 		this.element = this.createHeader();
 		this.navLinks = this.element.querySelectorAll(".navContainer a");
 
-        window.addEventListener('DOMContentLoaded', () => {
-            initializeCart()
+		window.addEventListener("DOMContentLoaded", () => {
+			initializeCart();
 
-            window.updateCartCounter = updateCartCounter
-        })
+			window.updateCartCounter = updateCartCounter;
+		});
 	}
 	createHeader() {
 		const headerContainer = document.createElement("div");
@@ -53,12 +50,11 @@ export class Header {
 		//ICON CONTAINER
 		const iconContainer = document.createElement("div");
 		iconContainer.className = "iconContainer";
-        
-        const cartHeaderBtn = document.createElement('button')
-        cartHeaderBtn.className = 'cartBtn'
-        cartHeaderBtn.addEventListener('click', showModal)
-        iconContainer.appendChild(cartHeaderBtn)
 
+		const cartHeaderBtn = document.createElement("button");
+		cartHeaderBtn.className = "cartBtn";
+		cartHeaderBtn.addEventListener("click", showModal);
+		iconContainer.appendChild(cartHeaderBtn);
 
 		const cartIcon = document.createElement("img");
 		cartIcon.className = "cartIcon";
@@ -82,6 +78,7 @@ export class Header {
 	}
 
 	updateActiveLink(activePage) {
+		console.log("Updating active link:", activePage); // Debug log
 		this.navLinks.forEach((link) => {
 			if (link.dataset.page === activePage) {
 				link.classList.add("activeLink");
