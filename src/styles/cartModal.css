@@ -15,7 +15,7 @@
 .allInWrapper{
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 1rem;
 }
 .closeCartContainer{
     margin: 2rem 3rem 2rem 2rem;
