@@ -1,7 +1,7 @@
 .itemsCartContainer{
     display: none;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 30%;
     z-index: 99;
     width: 800px;
@@ -125,4 +125,14 @@
     border: 2px var(--color-accent) solid;
     border-radius: 80px;
     cursor: pointer;
+}
+
+/*              EMPTY CART MESSAGE                  */
+.emptyCartMessage{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-primary);
 }

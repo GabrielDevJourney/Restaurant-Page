@@ -39,6 +39,11 @@
 	position: relative;
 	display: inline-block;
 }
+.cartBtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 .cartIcon {
 	width: 30px;
 	height: 30px;
