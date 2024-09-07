@@ -127,15 +127,8 @@ function createMenuPreviewSection() {
 		const btnOrderNow = document.createElement("button");
 		btnOrderNow.className = "btnOrderNow";
 		btnOrderNow.textContent = "ORDER NOW";
-		btnOrderNow.addEventListener("click", (e) => {
-			e.preventDefault();
-			const navigateEvent = new CustomEvent("navigate", {
-				detail: {
-					page: "menu",
-					category: cardInfo.name.toLocaleLowerCase(), //scroll direct to section of menu
-				},
-			});
-			window.dispatchEvent(navigateEvent);
+		btnOrderNow.addEventListener("click", () => {
+			navigateTo("menu", cardInfo.name.toLocaleLowerCase());
 		});
 		btnContainer.appendChild(btnOrderNow);
 	});
