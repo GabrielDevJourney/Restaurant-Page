@@ -9,6 +9,10 @@ const itemsCartContainer = document.createElement("div");
 itemsCartContainer.className = "itemsCartContainer";
 
 export function showModal() {
+    window.scrollTo({
+		top: 20,
+		behavior: "smooth",
+	});
 	itemsCartContainer.style.display = "block";
 	const content = document.getElementById("content");
 	if (content) {
