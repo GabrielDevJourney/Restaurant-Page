@@ -127,8 +127,7 @@ export function populateCartModal() {
 	closeCartContainer.appendChild(closeCartBtn);
 
 	if (cartItems.length === 0) {
-		itemsCartContainer.innerHTML = "<p>Your cart is empty</p>";
-		return;
+        showCartEmptyMessage()
 	}
 	// Create and append item cards
 	cartItems.forEach((item) => {
@@ -162,7 +161,12 @@ export function populateCartModal() {
 
 	updateTotalPrice();
 }
-
+function showCartEmptyMessage(){
+    const emptyCartMessage = document.createElement('p')
+    emptyCartMessage.className = 'emptyCartMessage'
+    emptyCartMessage.textContent = 'Your Cart Is Empty'
+    itemsCartContainer.appendChild(emptyCartMessage)
+}
 function populateCartItem(itemElement, itemData) {
 	console.log("populating", itemData);
 
