@@ -1,6 +1,7 @@
 import facebookIco from "../assets/facebookIco.png";
 import instagramIco from "../assets/instagramIco.png";
 import githubIco from "../assets/githubIco.png";
+import { navigateTo } from "../navigation.js";
 
 function renderFooter() {
 	const footerContainer = document.createElement("div");
@@ -31,13 +32,8 @@ function renderFooter() {
 	homeText.href = "#" + homeText.textContent.toLowerCase();
 	homeText.dataset.page = homeText.textContent.toLowerCase();
 	homeText.addEventListener("click", (e) => {
-		e.preventDefault();
-		const navigateEvent = new CustomEvent("navigate", {
-			detail: {
-				page: "home",
-			},
-		});
-		window.dispatchEvent(navigateEvent);
+        e.preventDefault();
+		navigateTo("home");
 	});
 	homeNavigationContainer.appendChild(homeText);
 
@@ -51,13 +47,8 @@ function renderFooter() {
 	menuText.href = "#" + menuText.textContent.toLowerCase();
 	menuText.dataset.page = menuText.textContent.toLowerCase();
 	menuText.addEventListener("click", (e) => {
-		e.preventDefault();
-		const navigateEvent = new CustomEvent("navigate", {
-			detail: {
-				page: "menu",
-			},
-		});
-		window.dispatchEvent(navigateEvent);
+        e.preventDefault();
+		navigateTo("menu");
 	});
 	menuNavigationContainer.appendChild(menuText);
 
@@ -84,17 +75,11 @@ function renderFooter() {
 		linkHref.className = "linkHref";
 		linkHref.id = `linkHref${link.name}`;
 		linkHref.textContent = link.name;
-		linkHref.href = "#" + link.name.toLowerCase();
+		linkHref.href = "#menu/" + link.name.toLowerCase();
 		linkHref.dataset.link = link.name.toLowerCase();
 		linkHref.addEventListener("click", (e) => {
-			e.preventDefault();
-			const navigateEvent = new CustomEvent("navigate", {
-				detail: {
-					page: "menu",
-					category: link.name.toLocaleLowerCase(),
-				},
-			});
-			window.dispatchEvent(navigateEvent);
+            e.preventDefault();
+			navigateTo("menu", link.name.toLocaleLowerCase());
 		});
 
 		linksList.appendChild(linkHref);
@@ -109,14 +94,8 @@ function renderFooter() {
 	aboutTextFooter.textContent = "ABOUT";
 	aboutTextFooter.href = "#" + aboutTextFooter.textContent.toLowerCase();
 	aboutTextFooter.dataset.page = aboutTextFooter.textContent.toLowerCase();
-	aboutTextFooter.addEventListener("click", (e) => {
-		e.preventDefault();
-		const navigateEvent = new CustomEvent("navigate", {
-			detail: {
-				page: "about",
-			},
-		});
-		window.dispatchEvent(navigateEvent);
+	aboutTextFooter.addEventListener("click", () => {
+		navigateTo("about");
 	});
 	aboutContainerFooter.appendChild(aboutTextFooter);
 
