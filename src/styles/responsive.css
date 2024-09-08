@@ -1,0 +1,201 @@
+@media screen and (max-width: 1023px) {
+	/* Header */
+	.headerContainer {
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		height: auto;
+	}
+
+	.navContainer {
+		margin: 2rem 0;
+	}
+
+	.iconContainer {
+		margin-top: 1rem;
+	}
+
+	/* hero section */
+	.heroTextContainer {
+		margin-top: 5rem;
+	}
+	.heroTextLine1,
+	.heroTextLine2 {
+		font-size: 3rem;
+	}
+	.heroImage {
+		height: auto;
+		width: 90%;
+		padding-right: 0;
+	}
+
+	/* preview menu */
+	.menuCardsContainer {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	/* testimonials */
+	.reviewCardImg {
+		width: 350px;
+	}
+	#reviewCard1 {
+		position: absolute;
+		top: 20%;
+		left: 0;
+	}
+	#reviewCard2 {
+		position: absolute;
+		top: 110%;
+		left: 20%;
+	}
+	#reviewCard3 {
+		position: absolute;
+		top: 35%;
+		left: 50%;
+	}
+
+	/* Footer */
+	.footerContainer {
+		height: auto;
+		padding: 1rem;
+	}
+
+	.navigationContainerFooter {
+		width: 60%;
+		justify-content: space-evenly;
+	}
+	.iconsWrapper {
+		width: 20%;
+		margin-top: 0;
+	}
+
+	/* MENU PAGE */
+	.headerMenuPageContainer {
+		margin-top: 3rem;
+	}
+	.headerMenuPageText {
+		font-size: 4rem;
+	}
+
+	.menuCategoriesContainer {
+		width: 100%;
+		max-width: 100%;
+		margin-left: 1rem;
+	}
+	.japoneseLettersContainer {
+		display: none;
+	}
+
+	/* MENU ITEMS */
+	.categorySectionHeadingText {
+		font-size: 3rem;
+	}
+	.cardContainer {
+		width: 90%;
+		gap: 0.5rem;
+		padding: 0.5rem;
+	}
+	.nameAndPriceText {
+		font-size: 1.5rem;
+	}
+	.imgToDisplay {
+		width: 250px;
+		height: 180px;
+	}
+
+	/* about page */
+	.aboutText {
+		font-size: 1.5rem;
+	}
+
+	/* CARTMODAL */
+	.itemsCartContainer {
+		left: 5%;
+		width: 90%;
+	}
+	.closeCartContainer {
+		margin: 1.5rem 2rem 1.5rem 1.5rem;
+	}
+
+	.emptyCartMessage {
+		top: 20%;
+	}
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+	/* Header */
+	.headerContainer {
+		padding: 0.5rem;
+		flex-direction: column;
+		align-items: center;
+        height: auto;
+		gap: 0.5rem;
+	}
+    
+    .navContainer{
+        margin: 2rem 0;
+        flex-direction: row;
+    }
+    .navContainer > a{
+        font-size: 1rem;
+    }
+
+    .iconContainer{
+        margin-top: 1.5rem;
+    }
+
+	.logoText {
+		font-size: 1.5rem;
+	}
+
+
+	/* Footer */
+	.logoContainerFooter > .logoTextFooter {
+		font-size: 1.5rem;
+	}
+
+	.iconsWrapper {
+		display: flex;
+		justify-content: center;
+	}
+
+	/* Home Page */
+	.heroTextLine1,
+	.heroTextLine2 {
+		font-size: 2rem;
+	}
+
+	.heroCtaBtn {
+		width: 10rem;
+		height: 3rem;
+		font-size: 1.2rem;
+	}
+
+	.menuCard {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	/* Menu Page */
+	.headerMenuPageText {
+		font-size: 3rem;
+	}
+
+	.cardContainer {
+		width: 100%;
+		grid-template-areas:
+			"name"
+			"img"
+			"description"
+			"extraInfo"
+			"btn";
+		grid-template-columns: 1fr;
+	}
+
+	.imgToDisplay {
+		width: 100%;
+		height: auto;
+	}
+}

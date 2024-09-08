@@ -6,17 +6,25 @@
 @import "header.css";
 @import "menuItem.css";
 @import "footer.css";
-@import 'cartModal.css';
+@import "cartModal.css";
 /* import pages content stylings */
 @import "homeContent.css";
 @import "menu.css";
 @import "about.css";
+/* media query file */
+@import 'responsive.css';
 
 * {
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
 	scroll-behavior: smooth;
+}
+html,
+body {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
 }
 body {
 	background-color: var(--color-background);

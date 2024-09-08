@@ -2,6 +2,7 @@
 	padding: 1.5rem;
 	height: 100px;
     width: 100%;
+    max-width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -67,3 +68,4 @@
 .navContainer a.activeLink{
     color: var(--color-accent) !important;
 }
+
