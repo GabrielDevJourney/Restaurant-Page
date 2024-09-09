@@ -1,12 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack')
 
 module.exports = {
-    mode:"development",
+	mode: "development",
 	entry: "./src/index.js",
 	output: {
-
 		filename: "bundle.js",
 		path: path.resolve(__dirname, "dist"),
 		publicPath: "/",
@@ -40,6 +40,7 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: "[name].[contenthash].css",
 		}),
+		new webpack.HotModuleReplacementPlugin(),
 	],
 	devServer: {
 		static: {
@@ -49,9 +50,15 @@ module.exports = {
 		port: 8081,
 		open: true,
 		hot: true,
+		client: {
+			logging: "info",
+			overlay: true,
+			reconnect: true,
+		},
 	},
 	resolve: {
 		extensions: [".js", ".jsx", ".json", ".png"],
+		modules: [path.resolve(__dirname, "node_modules")],
 	},
 	devtool: "inline-source-map",
 };
