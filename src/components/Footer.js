@@ -140,8 +140,8 @@ function renderFooter() {
             a.target = '_blank'
             a.rel = 'noopener noreferrer'
 
-			a.appendChild(iconContainer);
-			iconsWrapper.appendChild(a);
+			iconContainer.appendChild(a);
+			iconsWrapper.appendChild(iconContainer);
 		} else {
 			iconsWrapper.appendChild(iconContainer)
 		}
