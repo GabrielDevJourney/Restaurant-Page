@@ -71,4 +71,4 @@ Kaizen House is a dynamic, single-page application (SPA) for a Japanese restaura
 4. Open `index.html` in your browser to view the application
 
 ## 🔗 Live Demo
-[[KaizenHouse](https://gabrieldevjourney.github.io/Restaurant-Page/)]
+Experience Kaizen House Restaurant Page in action! Visit our [live demo](https://gabrieldevjourney.github.io/Restaurant-Page/) to explore the menu, add items to your cart, and get a feel for the user experience we've crafted. We welcome your feedback and suggestions for improvement.
