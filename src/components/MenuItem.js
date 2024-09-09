@@ -12,6 +12,7 @@ export function createDishCard(dish, category) {
 	const imgToDisplay = document.createElement("img");
 	imgToDisplay.className = "imgToDisplay";
 	imgToDisplay.src = dish.image;
+    imgToDisplay.loading = 'lazy'
 	imgContainer.appendChild(imgToDisplay);
 
 	const priceNamePiecesContainer = document.createElement("div");

@@ -63,6 +63,7 @@ function createHeroSection() {
 	heroImage.className = "heroImage";
 	heroImage.src = landingPageImage;
 	heroImage.alt = "Tradicional Japanese Dish";
+    heroImage.loading = 'lazy'
 	heroImage.onerror = () => {
 		console.log("failed to load hero image");
 	};
@@ -104,6 +105,7 @@ function createMenuPreviewSection() {
 		cardImg.className = "cardImg";
 		cardImg.src = cardInfo.image;
 		cardImg.alt = cardInfo.name;
+        cardImg.loading = 'lazy'
 		card.appendChild(cardImg);
 
 		const ctgAndVart = document.createElement("div");
