@@ -9,7 +9,7 @@ module.exports = {
 	output: {
 		filename: "bundle.js",
 		path: path.resolve(__dirname, "dist"),
-		publicPath: "https://gabrieldevjourney.github.io/Restaurant-Page/",
+		publicPath: "/Restaurant-Page/",
 		clean: true,
 	},
 	module: {
@@ -36,8 +36,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: "./src/index.html",
-            filename:"index.html",
-            publicPath: "/Restaurant-Page/"
+			filename: "index.html"
 		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].[contenthash].css",
